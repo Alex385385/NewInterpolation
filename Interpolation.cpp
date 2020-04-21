@@ -33,9 +33,9 @@ end function
  */
 
 float Interpolation::EvalNewton(std::vector<float> xs, std::vector<float> cs, float z, int n) {
-    float result = cs[n];
+    float result = cs[n-1];
 
-    for(int i = n - 1; i >= 0; i--) {
+    for(int i = n - 2; i >= 0; i--) {
         result = result * (z - xs[i]) + cs[i];
     }
 
